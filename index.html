@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaña Evangelística: La Verdad Revelada</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%);
+            color: #fff;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 15px;
+            background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070') no-repeat center/cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(74, 20, 140, 0.85);
+            border-radius: 12px;
+        }
+        header * { position: relative; z-index: 2; }
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .subtitulo {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .orador {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .orador img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            flex-shrink: 0;
+        }
+        .datos-clave {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            text-align: center;
+        }
+        .dato h3 {
+            color: #ffd54f;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        .dato p { font-size: 0.95rem; }
+        .cta {
+            text-align: center;
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .btn {
+            display: block;
+            background: #ffd54f;
+            color: #4a148c;
+            padding: 16px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+        .btn-secundario {
+            background: transparent;
+            border: 2px solid #ffd54f;
+            color: #ffd54f;
+        }
+        .btn:hover {
+            transform: scale(1.03);
+        }
+        .mapa {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        #contador {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffd54f;
+            margin-top: 15px;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .subtitulo { font-size: 1.1rem; }
+            .orador { justify-content: center; text-align: center; }
+            .orador img { width: 100px; height: 100px; }
+            .card { padding: 20px 15px; }
+            #contador { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CAMPAÑA EVANGELÍSTICA</h1>
+            <p class="subtitulo">LA VERDAD REVELADA</p>
+            <p><strong>IGLESIA ADVENTISTA DEL SÉPTIMO DÍA</strong></p>
+        </header>
+
+        <div class="card">
+            <div class="orador">
+                <img src="AQUI_VA_LA_FOTO_DEL_PASTOR.jpg" alt="Ptr. Abner Catzin Betancourt">
+                <div>
+                    <h2>ORADOR: PTR. ABNER CATZIN BETANCOURT</h2>
+                    <p>Asiste y trae a tus invitados. Juntos descubramos a Jesús y sus grandes verdades.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card datos-clave">
+            <div class="dato">
+                <h3>📅 FECHA</h3>
+                <p>Del Domingo 24 al 30 de Mayo</p>
+            </div>
+            <div class="dato">
+                <h3>⏰ HORA</h3>
+                <p>7:00 P.M. cada noche</p>
+            </div>
+            <div class="dato">
+                <h3>📍 LUGAR</h3>
+                <p>Iglesia Adventista del Séptimo Día</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 style="text-align:center; margin-bottom:15px;">FALTAN:</h2>
+            <div id="contador" style="text-align:center;">Cargando...</div>
+        </div>
+
+        <div class="card">
+            <h2 style="text-align:center; margin-bottom:10px;">📍 ¿CÓMO LLEGAR?</h2>
+            <p style="text-align:center; margin-bottom:10px;">Toca el mapa para abrir la ruta en tu celular</p>
+            <iframe 
+                class="mapa"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.5!2d-99.1!3d19.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI0JzAwLjAiTiA5OcKwMDYnMDAuMCJX!5e0!3m2!1ses!2smx!4v0000000000" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <div class="cta">
+            <a href="https://wa.me/52XXXXXXXXXX?text=Hola,%20quiero%20más%20info%20de%20la%20campaña%20La%20Verdad%20Revelada" class="btn">
+                CONFIRMA POR WHATSAPP
+            </a>
+            <a href="https://maps.google.com/?q=Iglesia+Adventista+del+Septimo+Dia" class="btn btn-secundario">
+                ABRIR RUTA EN MAPS
+            </a>
+        </div>
+
+        <footer>
+            <p>Organiza: Iglesia Adventista del Séptimo Día | Todos son bienvenidos</p>
+        </footer>
+    </div>
+
+    <script>
+        // Contador regresivo hasta el 24 de Mayo 2026 a las 7:00 PM
+        const fechaEvento = new Date("May 24, 2026 19:00:00").getTime();
+
+        const x = setInterval(function() {
+            const ahora = new Date().getTime();
+            const distancia = fechaEvento - ahora;
+
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            document.getElementById("contador").innerHTML = 
+                dias + "d " + horas + "h " + minutos + "m " + segundos + "s";
+
+            if (distancia < 0) {
+                clearInterval(x);
+                document.getElementById("contador").innerHTML = "¡LA CAMPAÑA YA COMENZÓ!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
